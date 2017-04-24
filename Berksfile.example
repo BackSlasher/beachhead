@@ -1,0 +1,11 @@
+# Example for setting up your berksfile
+source 'https://supermarket.chef.io'
+
+# Leave this
+cookbook 'beachhead', path: './cookbook-beachhead'
+
+# Regular cookbooks from the supermarket
+# cookbook 'selinux'
+
+# Cookbooks from another git repo
+# cookbook 'deluge', git: 'git@github.com:BackSlasher/chef-deluge.git'

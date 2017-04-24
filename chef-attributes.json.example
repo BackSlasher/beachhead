@@ -1,0 +1,7 @@
+# Remove the comments because JSON can't have comments
+{
+  "run_list": [
+    "beachhead", # Keep this or you'll be sad
+    "selinux", # Your things go here
+  ]
+}

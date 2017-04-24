@@ -1,0 +1,7 @@
+name             'beachhead'
+maintainer       'YOUR_NAME'
+maintainer_email 'YOUR_EMAIL'
+license          'All rights reserved'
+description      'Installs/Configures beachhead'
+long_description 'Installs/Configures beachhead'
+version          '0.1.0'

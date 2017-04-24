@@ -1,0 +1,19 @@
+# Bundler
+/vendor
+/bin
+/.bundle
+Gemfile.lock
+Berksfile.lock
+
+# Mine
+/cookbooks
+/chef.log
+/berkshelf-cache
+
+# Customizable
+/Berksfile
+/chef-attributes.json
+/data_bags
+
+# vim
+.*.swp
