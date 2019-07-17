@@ -8,7 +8,7 @@ sudo gem install bundler
 
 # Install ruby reqs
 bundle install --path vendor/bundle
-bundle binstubs berkshelf
+bundle binstubs berkshelf chef-bin
 
 # TODO databags
 

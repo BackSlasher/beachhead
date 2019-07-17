@@ -23,7 +23,7 @@ export BEACHHEAD_DIR
 solo_run() {
   CHEF="chef-solo"
   ! [ -e "bin/chef-solo" ] || CHEF="bin/chef-solo"
-  "$CHEF" -c chef-config.rb -j chef-attributes.json
+  "$CHEF" -c "${BEACHHEAD_DIR}/chef-config.rb" -j "${BEACHHEAD_DIR}/chef-attributes.json"
 }
 
 solo_run
