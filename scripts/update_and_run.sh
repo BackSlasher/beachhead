@@ -20,4 +20,10 @@ berks_vendor
 BEACHHEAD_DIR=$(pwd)
 export BEACHHEAD_DIR
 
-chef-solo -c chef-config.rb -j chef-attributes.json
+solo_run() {
+  CHEF="chef-solo"
+  ! [ -e "bin/chef-solo" ] || CHEF="bin/chef-solo"
+  "$CHEF" -c chef-config.rb -j chef-attributes.json
+}
+
+solo_run
