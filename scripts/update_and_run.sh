@@ -11,10 +11,8 @@ export BERKSHELF_PATH
 ! test -e Berksfile.lock || rm Berksfile.lock
 
 berks_vendor() {
-  local BERKS_PATH=berks
-  ! test -e bin/berks || BERKS_PATH=bin/berks
-  "$BERKS_PATH" install
-  "$BERKS_PATH" vendor --delete cookbooks
+  bin/berks install
+  bin/berks vendor --delete cookbooks
 }
 
 berks_vendor

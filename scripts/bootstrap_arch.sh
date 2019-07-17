@@ -3,14 +3,12 @@ set -e
 
 cd "$( dirname "${BASH_SOURCE[0]}" )/.."
 
-sudo pacman --noconfirm -S git
-(
-  YAY_DIR="$(mktemp -d)"
-  cd "$YAY_DIR"
-  git clone https://aur.archlinux.org/yay.git
-  cd yay
-  makepkg -si
-)
+sudo pacman --noconfirm -S git ruby
+sudo gem install bundler
+
+# Install ruby reqs
+bundle install --path vendor/bundle
+bundle binstubs berkshelf
 
 # TODO databags
 
