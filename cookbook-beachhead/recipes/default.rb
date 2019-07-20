@@ -23,7 +23,7 @@ if use_systemd then
 
       [Service]
       Type=oneshot
-      Exec=#{beachhead_dir}/scripts/update_and_run.sh
+      ExecStart=#{beachhead_dir}/scripts/update_and_run.sh
       RootDirectory=#{beachhead_dir}
       StandardOutput=file:#{beachhead_dir}/log/latest.log
       StandardError=inherit
