@@ -10,8 +10,6 @@
 # Parse envvar
 beachhead_dir = ENV['BEACHHEAD_DIR']
 
-command = "cd #{beachhead_dir} && scripts/update_and_run.sh >log/latest.log 2>&1"
-
 use_systemd = node['init_package'] == 'systemd'
 
 # TODO delete systemd units if not using it?
@@ -25,7 +23,10 @@ if use_systemd then
 
       [Service]
       Type=simple
-      ExecStart=#{command}
+      ExecStart=#{beachhead_dir}/scripts/update_and_run.sh
+      RootDirectory=#{beachhead_dir}
+      StandardOutput=file:#{beachhead_dir}/log/latest.log
+      StandardError=inherit
       EOS
       action [:create, :enable]
     end
