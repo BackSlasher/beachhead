@@ -25,7 +25,7 @@ if use_systemd then
 
       [Service]
       Type=simple
-      Exec=#{command}
+      ExecStart=#{command}
       EOS
     end
     # TODO timer
