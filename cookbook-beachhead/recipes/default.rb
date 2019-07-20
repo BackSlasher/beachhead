@@ -22,7 +22,7 @@ if use_systemd then
       Description=Set the computer up. See #{beachhead_dir}
 
       [Service]
-      Type=simple
+      Type=oneshot
       ExecStart=#{beachhead_dir}/scripts/update_and_run.sh
       RootDirectory=#{beachhead_dir}
       StandardOutput=file:#{beachhead_dir}/log/latest.log
