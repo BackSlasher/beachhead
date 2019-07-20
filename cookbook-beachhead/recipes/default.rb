@@ -27,6 +27,7 @@ if use_systemd then
       Type=simple
       ExecStart=#{command}
       EOS
+      action [:create, :enable]
     end
     # TODO timer
     systemd_unit "#{systemd_unit_name}.timer" do
@@ -39,6 +40,7 @@ if use_systemd then
       EOS
       # Every 2 hours on the 0:45 minute
       # https://unix.stackexchange.com/a/396673
+      action [:create, :enable]
     end
 else
   cron 'beachhead-runthis' do
