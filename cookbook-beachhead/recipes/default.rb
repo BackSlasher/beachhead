@@ -15,7 +15,6 @@ use_systemd = node['init_package'] == 'systemd'
 # TODO delete systemd units if not using it?
 if use_systemd then
     systemd_unit_name = "beachhead"
-    # TODO unit
     systemd_unit "#{systemd_unit_name}.service" do
       content <<~EOS
       [Unit]
@@ -29,7 +28,6 @@ if use_systemd then
       EOS
       action [:create, :enable]
     end
-    # TODO timer
     systemd_unit "#{systemd_unit_name}.timer" do
       content <<~EOS
       [Unit]
@@ -37,6 +35,9 @@ if use_systemd then
 
       [Timer]
       OnCalendar=00/2:45
+
+      [Install]
+      WantedBy=timers.target
       EOS
       # Every 2 hours on the 0:45 minute
       # https://unix.stackexchange.com/a/396673
