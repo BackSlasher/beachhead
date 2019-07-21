@@ -24,6 +24,7 @@ if use_systemd then
       [Service]
       Type=oneshot
       ExecStart=#{beachhead_dir}/scripts/update_and_run.sh
+      Environment=HOME=/root # Needed for Berks
       EOS
       action [:create, :enable]
     end
