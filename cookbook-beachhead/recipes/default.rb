@@ -18,7 +18,7 @@ if use_systemd then
     systemd_unit "#{systemd_unit_name}.service" do
       content <<~EOS
       [Unit]
-      Description=Set the computer up. See #{beachhead_dir}
+      Description=Beachhead Server
 
       [Service]
       Type=oneshot
@@ -31,7 +31,7 @@ if use_systemd then
     systemd_unit "#{systemd_unit_name}.timer" do
       content <<~EOS
       [Unit]
-      Description=Runs the beachhead server. See #{beachhead_dir}
+      Description=Beachhead Server
 
       [Timer]
       OnCalendar=00/2:45
