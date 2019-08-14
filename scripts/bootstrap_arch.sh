@@ -3,7 +3,7 @@ set -e
 
 cd "$( dirname "${BASH_SOURCE[0]}" )/.."
 
-sudo pacman --noconfirm --needed -S git ruby ruby-bundler
+pacman --noconfirm --needed -S git ruby ruby-bundler
 
 # Install ruby reqs
 bundle install --path vendor/bundle
@@ -11,4 +11,4 @@ bundle binstubs berkshelf chef-bin
 
 # TODO databags
 
-sudo scripts/update_and_run.sh
+scripts/update_and_run.sh
