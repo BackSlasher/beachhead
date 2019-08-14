@@ -3,8 +3,7 @@ set -e
 
 cd "$( dirname "${BASH_SOURCE[0]}" )/.."
 
-sudo pacman --noconfirm --needed -S git ruby
-sudo gem install bundler
+sudo pacman --noconfirm --needed -S git ruby ruby-bundler
 
 # Install ruby reqs
 bundle install --path vendor/bundle
